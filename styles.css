@@ -1,0 +1,502 @@
+
+/* Week 2: CSS Mastery */
+
+/* 1. Reset and box model */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--color-text);
+    background-color: var(--color-background);
+}
+
+/* 2. Typography and colour system */
+:root {
+    --color-primary: #234e70;
+    --color-accent: #e07a5f;
+    --color-text: #243047;
+    --color-background: #f7f8fc;
+    --color-surface: #ffffff;
+    --color-border: #d8dee8;
+
+    --font-heading: Georgia, "Times New Roman", serif;
+    --font-body: Arial, Helvetica, sans-serif;
+
+    --space-small: 0.5rem;
+    --space-medium: 1rem;
+    --space-large: 2rem;
+
+    --content-width: 1100px;
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--font-heading);
+    line-height: 1.2;
+    margin-bottom: var(--space-medium);
+}
+
+p,
+ul {
+    margin-bottom: var(--space-medium);
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    color: var(--color-primary);
+    text-underline-offset: 0.2em;
+}
+
+a:hover {
+    color: var(--color-accent);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid var(--color-accent);
+    outline-offset: 3px;
+}
+
+/* 3. Shared page layout */
+header,
+main,
+footer {
+    width: min(100% - 2rem, var(--content-width));
+    margin-inline: auto;
+}
+
+header {
+    padding-block: var(--space-large);
+}
+
+main {
+    padding-block: var(--space-large);
+}
+
+section {
+    margin-bottom: var(--space-large);
+}
+
+footer {
+    padding-block: var(--space-large);
+    border-top: 1px solid var(--color-border);
+}
+
+/* 4. Navigation using Flexbox */
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-medium);
+    list-style: none;
+    padding: 0;
+}
+
+nav a {
+    display: inline-block;
+    padding: var(--space-small);
+    border-radius: 0.25rem;
+    font-weight: bold;
+}
+
+nav a:hover,
+nav a[aria-current="page"] {
+    background-color: var(--color-primary);
+    color: #ffffff;
+}
+
+/* 5. Homepage header and navigation */
+.site-header {
+    width: 100%;
+    padding: 16px 20px;
+    background-color: var(--color-surface);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.header-content {
+    width: 100%;
+    max-width: var(--content-width);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.site-logo {
+    color: var(--color-primary);
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* 6. Responsive homepage hero */
+.hero,
+.content-section,
+.site-footer {
+    width: 100%;
+    max-width: var(--content-width);
+    margin-inline: auto;
+    padding: 32px 20px;
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+    align-items: center;
+}
+
+.hero h1 {
+    font-size: clamp(2rem, 6vw, 3.5rem);
+}
+
+.hero-eyebrow {
+    color: var(--color-accent);
+    font-weight: bold;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.button,
+button {
+    display: inline-block;
+    max-width: 100%;
+    padding: 12px 18px;
+    border: 2px solid var(--color-primary);
+    border-radius: 6px;
+    background-color: var(--color-primary);
+    color: #ffffff;
+    font: inherit;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    overflow-wrap: anywhere;
+}
+
+.button-secondary {
+    background-color: transparent;
+    color: var(--color-primary);
+}
+
+.button:hover,
+button:hover {
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+    color: #ffffff;
+}
+
+.button:focus-visible {
+    outline: 3px solid var(--color-accent);
+    outline-offset: 3px;
+}
+
+.hero-image {
+    min-width: 0;
+    margin: 0;
+}
+
+.hero-image img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.hero-image figcaption,
+.gallery-grid figcaption {
+    padding-top: var(--space-small);
+    color: #526176;
+}
+
+/* 7. Images and responsive gallery */
+figure {
+    margin-bottom: var(--space-large);
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-large);
+}
+
+.gallery-grid figure {
+    min-width: 0;
+    margin: 0;
+}
+
+.gallery-grid img {
+    width: 100%;
+    border-radius: 0.5rem;
+}
+
+/* 8. Responsive projects grid */
+.project-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-large);
+}
+
+.project-card {
+    min-width: 0;
+    padding: 24px;
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 0.5rem;
+    overflow-wrap: anywhere;
+}
+
+.project-card h3 {
+    color: var(--color-primary);
+}
+
+.project-card img {
+    width: 100%;
+    border-radius: 0.25rem;
+    margin-bottom: var(--space-medium);
+}
+
+.project-card a {
+    font-weight: bold;
+}
+
+.project-card a:hover,
+.project-card a:focus-visible {
+    color: var(--color-accent);
+}
+
+/* 9. Forms */
+form {
+    width: 100%;
+    max-width: 650px;
+}
+
+fieldset {
+    min-width: 0;
+    padding: var(--space-medium);
+    border: 1px solid var(--color-border);
+    border-radius: 0.5rem;
+}
+
+label {
+    display: block;
+    margin-top: var(--space-medium);
+    font-weight: bold;
+}
+
+input,
+select,
+textarea {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    padding: 0.65rem;
+    border: 1px solid #9aa7b8;
+    border-radius: 0.25rem;
+    font: inherit;
+}
+
+textarea {
+    min-height: 140px;
+    resize: vertical;
+}
+
+.form-note,
+.journal-subtitle {
+    font-size: 0.9rem;
+    color: #526176;
+}
+
+/* 10. Learning journal */
+.journal-card {
+    padding: 20px;
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    background-color: var(--color-surface);
+    overflow-wrap: anywhere;
+}
+
+/* 11. Box model practice page */
+.box-model-demo {
+    width: 200px;
+    max-width: 100%;
+    padding: 20px;
+    border: 5px solid var(--color-primary);
+    margin: 20px 0;
+    background-color: var(--color-surface);
+    overflow-wrap: anywhere;
+}
+
+.content-box-demo {
+    box-sizing: content-box;
+}
+
+.border-box-demo {
+    box-sizing: border-box;
+}
+
+.box-model-label {
+    font-weight: bold;
+    color: var(--color-primary);
+}
+
+.box-model-visual {
+    max-width: 100%;
+    margin: 24px 0;
+    padding: 10px;
+    overflow-wrap: anywhere;
+}
+
+.margin-layer {
+    padding: 24px;
+    background-color: #f4d6a0;
+    text-align: center;
+}
+
+.border-layer {
+    padding: 20px;
+    background-color: #d97757;
+}
+
+.padding-layer {
+    padding: 20px;
+    background-color: #d8e9c5;
+}
+
+.content-layer {
+    padding: 24px 10px;
+    background-color: #d7e9f7;
+    color: #243047;
+    font-weight: bold;
+    overflow-wrap: anywhere;
+}
+
+.layer-label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #243047;
+}
+
+.debug-container {
+    width: 100%;
+    max-width: 350px;
+    margin: 20px 0;
+    padding: 10px;
+    border: 2px dashed var(--color-accent);
+    background-color: var(--color-background);
+}
+
+.debug-card {
+    box-sizing: content-box;
+    width: 300px;
+    max-width: none;
+    padding: 20px;
+    border: 5px solid var(--color-primary);
+    background-color: var(--color-surface);
+    overflow-wrap: anywhere;
+}
+
+.debug-card-fixed {
+    box-sizing: border-box;
+    width: 300px;
+    max-width: 100%;
+}
+
+.box-model-card {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 400px;
+    padding: 24px;
+    margin: 24px 0;
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    background-color: var(--color-surface);
+    overflow-wrap: anywhere;
+}
+
+.box-model-card h3 {
+    margin-top: 0;
+    color: var(--color-primary);
+}
+
+.box-model-card a {
+    display: inline-block;
+    margin-top: 8px;
+    font-weight: bold;
+}
+
+.box-model-card a:hover,
+.box-model-card a:focus-visible {
+    color: var(--color-accent);
+}
+
+/* 12. Tablet: two project columns */
+@media (min-width: 768px) {
+    .header-content {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .hero {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 0.8fr);
+        gap: 32px;
+        padding-top: 56px;
+        padding-bottom: 56px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .project-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    nav ul {
+        gap: var(--space-large);
+    }
+}
+
+/* 13. Desktop: three project columns */
+@media (min-width: 1024px) {
+    .hero {
+        gap: 48px;
+        padding-top: 72px;
+        padding-bottom: 72px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .project-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}

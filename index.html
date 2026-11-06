@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Eugine's web development portfolio, projects, learning journey, and contact information.">
+    <title>Eugine | My Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-content">
+            <a class="site-logo" href="index.html">Eugine</a>
+
+            <nav aria-label="Main navigation">
+                <ul>
+                    <li><a href="index.html" aria-current="page">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="hero-content">
+                <p class="hero-eyebrow">Welcome to my portfolio</p>
+
+                <h1 id="hero-title">Learning, Building, and Growing</h1>
+
+                <p>
+                    Learning the syntax. Building the logic.
+                    Debugging the unknown. Just getting started—
+                    one commit at a time.
+                </p>
+
+                <p>
+                    I am Eugine, a beginner web developer learning
+                    HTML, CSS, and JavaScript through practical projects.
+                </p>
+
+                <div class="hero-actions">
+                    <a class="button" href="projects.html">Explore My Projects</a>
+                    <a class="button button-secondary" href="about.html">About Me</a>
+                </div>
+            </div>
+
+            <figure class="hero-image">
+                <img
+                    src="IMG-20260925-WA0052(1).jpg"
+                    alt="A moment from Eugine's learning journey at IYF">
+                <figcaption>Every project is another step forward.</figcaption>
+            </figure>
+        </section>
+
+        <section id="about" class="content-section">
+            <h2>About Me</h2>
+            <p>
+                I am Eugine, a beginner web developer learning how to build
+                websites using HTML, CSS, and JavaScript.
+            </p>
+            <p>
+                I enjoy learning new things, solving problems, and turning
+                ideas into something people can use.
+            </p>
+            <p><a href="about.html">Read more about me</a></p>
+        </section>
+
+        <section id="projects" class="content-section">
+            <h2>My Learning Projects</h2>
+            <p>
+                I am building my web development skills through practical
+                exercises and projects as part of the IYF Weekend Academy.
+            </p>
+            <p><a href="projects.html">Visit my Projects page</a></p>
+        </section>
+
+        <section id="contact" class="content-section">
+            <h2>Contact Me</h2>
+            <p>You can reach me by email or use the form below.</p>
+            <p><a href="mailto:euginealulu@gmail.com">euginealulu@gmail.com</a></p>
+
+            <form action="mailto:euginealulu@gmail.com"
+                  method="post"
+                  enctype="text/plain">
+                <fieldset>
+                    <legend>Send me a message</legend>
+
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" autocomplete="name" required>
+
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" autocomplete="email" required>
+
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+
+                    <button type="submit">Send Message</button>
+                </fieldset>
+            </form>
+
+            <p class="form-note">
+                Note: Sending this form depends on your device having
+                a compatible email application configured.
+            </p>
+        </section>
+
+        <section id="gallery" class="content-section">
+            <h2>Photo Gallery</h2>
+            <div class="gallery-grid">
+                <figure>
+                    <img src="IMG-20260925-WA0052(1).jpg" alt="A view from the IYF campus">
+                    <figcaption>A moment from my journey</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="IMG-20260925-WA0053(1).jpg" alt="Another moment at the IYF campus">
+                    <figcaption>Learning and growing</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="IMG-20260925-WA0055%20(1).jpg" alt="A memory from my time at IYF">
+                    <figcaption>Building new experiences</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section id="blog" class="content-section">
+            <h2>My Learning Journal</h2>
+
+            <article class="journal-card">
+                <h3>My Web Development Journey</h3>
+                <p class="journal-subtitle">My first steps into web development</p>
+
+                <p>
+                    I am learning how websites are built using HTML, CSS,
+                    and JavaScript. This is the beginning of my journey,
+                    and I am excited to keep learning and building new projects.
+                </p>
+
+                <p>Written by Eugine</p>
+            </article>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Eugine. Built while learning web development.</p>
+    </footer>
+</body>
+</html>
+
