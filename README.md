@@ -25,10 +25,10 @@ This repository contains my Week 3 work for the IYF Weekend Academy Season 12. I
 | `styles.css` | Portfolio styling |
 | `new-project.sh` | Reusable project setup script |
 | `.gitignore` | Files and folders Git should ignore |
-| `terminal-log.md` | Record of terminal commands used |
-| `conflict-practice.txt` | File used for Git merge conflict practice |
-| `daily-challenges/` | Documentation for the five daily challenges |
-| `terminal-practice/` | Terminal practice project and related files |
+| `terminal-log.md` | Terminal command record |
+| `conflict-practice.txt` | Git conflict practice |
+| `daily-challenges/` | Five daily challenge records |
+| `terminal-practice/` | Terminal practice project |
 | `IMG-*.jpg` | Portfolio images |
 
 ## Features and Practice Activities
@@ -57,8 +57,6 @@ bash ./new-project.sh my-project
 ```
 
 Replace `my-project` with your preferred project name.
-
-The script creates a project folder containing directories for source files, CSS, JavaScript, images, documentation, and tests.
 
 ## What I Learned
 
