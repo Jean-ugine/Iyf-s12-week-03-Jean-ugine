@@ -1,1 +1,2 @@
 Welcome to my Git conflict practice.
+Welcome to my Git merge conflict exercise.
